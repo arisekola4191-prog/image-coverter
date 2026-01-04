@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image to PDF Converter</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🖼️ Image to PDF Converter</h1>
+      <p>Upload your images and convert them to a PDF under 1MB.</p>
+    </header>
+
+    <main>
+      <input type="file" multiple accept="image/*" id="fileInput">
+      <button class="btn" id="generateBtn">Pay to Unlock PDF</button>
+      <p class="info-text" id="infoText">One-time payment required to unlock PDF download.</p>
+      <div class="preview" id="preview"></div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Mubarak Adewale. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="payment-success">
+    <div class="card">
+      <h2>Payment Successful 🎉</h2>
+      <p>Your one-time access is now unlocked.</p>
+      <button class="btn" id="continueBtn">Continue to Tool</button>
+    </div>
+  </div>
+
+  <script>
+    // Set payment status
+    localStorage.setItem("hasPaid", "true");
+
+    document.getElementById('continueBtn').addEventListener('click', () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f8fa;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  color: #2563eb;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+.info-text {
+  text-align: center;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.preview img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Payment Success Page */
+.payment-success {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-success .card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.payment-success h2 {
+  color: green;
+  margin-bottom: 15px;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f8fa;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  color: #2563eb;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+.info-text {
+  text-align: center;
+  color: #666;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.preview img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Payment Success Page */
+.payment-success {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-success .card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.payment-success h2 {
+  color: green;
+  margin-bottom: 15px;
+}
+const PAYSTACK_LINK = "https://paystack.shop/pay/hfumkd7052";
+const fileInput = document.getElementById('fileInput');
+const generateBtn = document.getElementById('generateBtn');
+const infoText = document.getElementById('infoText');
+const preview = document.getElementById('preview');
+
+let images = [];
+let isProcessing = false;
+const hasPaid = localStorage.getItem("hasPaid") === "true";
+
+if (hasPaid) {
+  generateBtn.textContent = "Generate PDF";
+  infoText.style.display = "none";
+}
+
+fileInput.addEventListener('change', (e) => {
+  const files = Array.from(e.target.files);
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      images.push(ev.target.result);
+      const imgElem = document.createElement('img');
+      imgElem.src = ev.target.result;
+      preview.appendChild(imgElem);
+    };
+    reader.readAsDataURL(file);
+  });
+});
+
+const compressImage = (src, maxWidth = 1200, quality = 0.6) => {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, maxWidth / img.width);
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve(canvas.toDataURL('image/jpeg', quality));
+    };
+    img.src = src;
+  });
+}
+
+generateBtn.addEventListener('click', async () => {
+  if (!hasPaid) {
+    // Redirect to Payment page
+    window.location.href = "payment-success.html";
+    return;
+  }
+
+  if (images.length === 0) return;
+
+  isProcessing = true;
+  generateBtn.textContent = "Generating PDF...";
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF("p", "mm", "a4");
+  const pageWidth = 210;
+  const pageHeight = 297;
+  const margin = 15;
+  const cellHeight = 120;
+  let y = margin;
+
+  for (let src of images) {
+    const compressed = await compressImage(src, 1200, 0.6);
+    const img = new Image();
+    img.src = compressed;
+    await new Promise(r => (img.onload = r));
+
+    const ratio = Math.min((pageWidth - margin * 2) / img.width, cellHeight / img.height);
+    const w = img.width * ratio;
+    const h = img.height * ratio;
+
+    pdf.addImage(compressed, "JPEG", (pageWidth - w)/2, y, w, h, undefined, "FAST");
+
+    y += h + margin;
+    if (y + h > pageHeight - margin) {
+      pdf.addPage();
+      y = margin;
+    }
+  }
+
+  pdf.save("compressed-images.pdf");
+  localStorage.removeItem("hasPaid");
+  isProcessing = false;
+  generateBtn.textContent = "Generate PDF";
+});
